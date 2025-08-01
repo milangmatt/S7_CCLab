@@ -6,8 +6,8 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import pyqtSignal, QObject
 
-HOST = '127.0.0.1'
-PORT = 65432
+HOST = '172.18.16.13'
+PORT = 65433
 
 class MessageSignal(QObject):
     message_received = pyqtSignal(str)
@@ -119,7 +119,7 @@ class ChatClient(QWidget):
         # Alignment and colors
         if is_self:
             alignment = "right"
-            bubble_color = "#0078d7"
+            bubble_color = "#6100d7"
         else:
             alignment = "left"
             bubble_color = "#333"

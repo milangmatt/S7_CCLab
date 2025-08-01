@@ -2,8 +2,8 @@
 import socket
 import threading
 
-HOST = '127.0.0.1'
-PORT = 65432
+HOST = '172.18.16.13'
+PORT = 65433
 clients = []
 
 def handle_client(conn, addr):
