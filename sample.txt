@@ -1,0 +1,6 @@
+Hello world
+This is a Spark example
+Hello Spark
+Word count is fun
+Spark makes big data processing easy
+Hello world of Spark

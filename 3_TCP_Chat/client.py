@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import pyqtSignal, QObject
 
-HOST = '172.18.16.13'
+HOST = '127.0.0.1'
 PORT = 65433
 
 class MessageSignal(QObject):

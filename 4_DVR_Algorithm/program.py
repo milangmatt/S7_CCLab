@@ -5,10 +5,10 @@ routers = ['A', 'B', 'C', 'D']
 INF = 999
 
 graph = [
-    [0,   1,   3, INF],   # A
-    [1,   0,   1,   4],   # B
-    [3,   1,   0,   1],   # C
-    [INF, 4,   1,   0]    # D
+    [0,   2,   INF, 1],   # A
+    [2,   0,   3,   7],   # B
+    [INF,   3,   0,   11],   # C
+    [1, 7,   11,   0]    # D
 ]
 
 distance = [row[:] for row in graph]  # Deep copy of graph
@@ -23,11 +23,12 @@ def run_dvr():
                 for k in range(n):  # For each neighbor k
                     if distance[i][j] > distance[i][k] + distance[k][j]:
                         distance[i][j] = distance[i][k] + distance[k][j]
-                        next_hop[i][j] = k
+                        next_hop[i][j] = next_hop[i][k]  # Update to go through router k
                         updated = True
 
 run_dvr()
 
+# Print routing tables
 for i in range(n):
     print(f"\nRouting Table for Router {routers[i]}:")
     print("Destination\tCost\tNext Hop")
